@@ -18,10 +18,13 @@ class MostPopularMoviesCollectionViewCell: UICollectionViewCell {
     }
     
     func saveModel(model: MostPopularMovie) {
-        imageMovie.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/original\(model.poster_path ?? "")"))
+        imageMovie.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(model.poster_path ?? "")"))
         movieNameLabel.text = model.original_title
         overviewLabel.text = model.overview
-        self.imageMovie.layer.cornerRadius = 10.0
+        
+        // imageMovie.translatesAutoresizingMaskIntoConstraints = false
+        imageMovie.clipsToBounds = true
+        imageMovie.layer.cornerRadius = 10.0
     }
     
 }

@@ -7,19 +7,23 @@
 
 import UIKit
 
+
 protocol MostPopularMoviesOutput {
     func saveDatas()
 }
 
 class MostPopularMoviesViewController: UIViewController {
     
-    @IBOutlet weak var mostPopularMoviesCV: UICollectionView!
     let mostPopularMovieViewModel: MostPopularMovieViewModelProtocol = MostPopularMovieViewModel()
+    
+    @IBOutlet weak var mostPopularMoviesCV: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mostPopularMovieViewModel.fetchMovies()
         setupUI()
     }
+
     
     private func setupUI(){
         self.mostPopularMoviesCV.delegate = self
@@ -32,19 +36,21 @@ class MostPopularMoviesViewController: UIViewController {
 
 extension MostPopularMoviesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return mostPopularMovieViewModel.dataList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "MovieDetailsStoryboard", bundle: nil)
+        let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailVC") as! MovieDetailsViewController
+        let dataList = mostPopularMovieViewModel.dataList[indexPath.row]
+        detailVC.data = dataList
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "moviesCell", for: indexPath) as? MostPopularMoviesCollectionViewCell else { return UICollectionViewCell() }
 
-        
-        
         /// Cell graphics
         
         //cell.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +61,7 @@ extension MostPopularMoviesViewController: UICollectionViewDelegate, UICollectio
         cell.layer.borderWidth = 0.5
         
         collectionView.layer.backgroundColor = view.backgroundColor?.cgColor
-        // cell.imageMovie.topAnchor.constraint(greaterThanOrEqualTo: cell.topAnchor, constant: -50.0).isActive = true
+        // cell.imageMovie.topAnchor.constraint(greaterThanOrEqualTo: cell.topAnchor, constant: 50.0).isActive = true
         // cell.topAnchor.constraint(lessThanOrEqualTo: cell.imageMovie.topAnchor, constant: -60.0).isActive = true
         // cell.imageMovie.topAnchor.constraint(lessThanOrEqualTo: cell.topAnchor, constant: 50.0).isActive = true
         
@@ -69,5 +75,4 @@ extension MostPopularMoviesViewController: MostPopularMoviesOutput {
     func saveDatas() {
         mostPopularMoviesCV.reloadData()
     }
-    
 }

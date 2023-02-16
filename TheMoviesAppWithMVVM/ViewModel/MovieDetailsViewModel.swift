@@ -37,9 +37,8 @@ final class MovieDetailsViewModel: MovieDetailsViewModelProtocol {
     
     func fetchVideos(id: Int) {
         mostPopularMovieService.fetchVideoDatas(id: id) { [weak self] (model) in
-           guard let self = self else { return }
-            self.videoDetails = model
-            self.movieDetailsOutput?.saveDatas()
+            self?.videoDetails = model
+            self?.movieDetailsOutput?.saveDatas()
         } onFail: { error in
             print(error)
         }
@@ -47,9 +46,8 @@ final class MovieDetailsViewModel: MovieDetailsViewModelProtocol {
     
     func fetchCast(id: Int) {
         mostPopularMovieService.fetchCastDatas(id: id) { [weak self] (model) in
-            guard let self = self else { return }
-            self.castDetails = model
-            self.movieDetailsOutput?.saveDatas()
+            self?.castDetails = model
+            self?.movieDetailsOutput?.saveDatas()
         } onFail: { error in
             print(error)
         }

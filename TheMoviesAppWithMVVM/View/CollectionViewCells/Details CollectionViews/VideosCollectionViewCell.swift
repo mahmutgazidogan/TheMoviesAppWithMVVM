@@ -13,7 +13,6 @@ class VideosCollectionViewCell: UICollectionViewCell {
     @IBOutlet var videoPlayer: YTPlayerView!
     @IBOutlet weak var videoNameLabel: UILabel!
     
-    
     override class func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -30,6 +29,7 @@ class VideosCollectionViewCell: UICollectionViewCell {
         videoPlayer.clipsToBounds = true
         videoPlayer.layer.cornerRadius = 10.0
     }
+    
 }
 
 extension VideosCollectionViewCell: YTPlayerViewDelegate {}

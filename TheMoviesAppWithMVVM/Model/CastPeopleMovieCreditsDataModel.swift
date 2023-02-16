@@ -9,9 +9,12 @@ import Foundation
 
 //MARK: PeopleMovieCredits Model
 
-struct PeopleMovieCredits: Codable {
-    let poster_path: String?
-}
 struct MovieCredits: Codable {
     let cast: [PeopleMovieCredits]
 }
+
+struct PeopleMovieCredits: Codable {
+    let poster_path: String?
+    let original_title: String?
+}
+

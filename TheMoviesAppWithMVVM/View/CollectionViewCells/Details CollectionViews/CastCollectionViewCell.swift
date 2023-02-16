@@ -18,11 +18,17 @@ class CastCollectionViewCell: UICollectionViewCell {
     }
     
     func saveModel(model: CastPersons) {
-        imageCast.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(model.profile_path ?? "")"))
+        if model.profile_path == nil {
+            imageCast.kf.setImage(with: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/No_picture_available.png/401px-No_picture_available.png"))
+        } else {
+            imageCast.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(model.profile_path ?? "")"))
+        }
+        
         personNameLabel.text = model.name
         
         imageCast.clipsToBounds = true
         imageCast.layer.cornerRadius = 10.0
     }
+    
 }
 

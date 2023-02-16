@@ -30,9 +30,8 @@ final class MostPopularMovieViewModel: MostPopularMovieViewModelProtocol {
     
     func fetchMovies() {
         mostPopularMovieService.fetchPopularMovies(url: Constants.mostPopularMovieURL) { [weak self] (model) in
-            guard let self = self else { return }
-            self.dataList = model
-            self.mostPopularMoviesOutput?.saveDatas()
+            self?.dataList = model
+            self?.mostPopularMoviesOutput?.saveDatas()
         } onFail: { error in
             print(error)
         }

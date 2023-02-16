@@ -26,8 +26,13 @@
 		C047FEF12978142B00D1894A /* MostPopularMoviesSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C047FEF02978142B00D1894A /* MostPopularMoviesSB.storyboard */; };
 		C047FEF32978144100D1894A /* MostPopularMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047FEF22978144100D1894A /* MostPopularMoviesViewController.swift */; };
 		C06A862629784D8C005E0237 /* MostPopularMoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06A862529784D8C005E0237 /* MostPopularMoviesCollectionViewCell.swift */; };
+		C08EA1B32982BE7A00FE481F /* CastMoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EA1B22982BE7A00FE481F /* CastMoviesCollectionViewCell.swift */; };
+		C08EA1B52982C32E00FE481F /* TVsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EA1B42982C32E00FE481F /* TVsCollectionViewCell.swift */; };
 		C0A76D8629815DBD00B88D6F /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = C0A76D8529815DBD00B88D6F /* Cosmos */; };
 		C0A76D892981687600B88D6F /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = C0A76D882981687600B88D6F /* YouTubeiOSPlayerHelper */; };
+		C0A76D8D2981A7DA00B88D6F /* CastDetailsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A76D8C2981A7DA00B88D6F /* CastDetailsStoryboard.storyboard */; };
+		C0A76D8F2981A9EB00B88D6F /* CastDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A76D8E2981A9EB00B88D6F /* CastDetailsViewController.swift */; };
+		C0A76D912981B8C400B88D6F /* CastDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A76D902981B8C400B88D6F /* CastDetailsViewModel.swift */; };
 		C0E9325E297B0F7D00F5E50D /* CastDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9325D297B0F7D00F5E50D /* CastDataModel.swift */; };
 		C0E93260297B105D00F5E50D /* MovieVideoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9325F297B105D00F5E50D /* MovieVideoDataModel.swift */; };
 		C0E93262297B107800F5E50D /* CastPeopleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E93261297B107800F5E50D /* CastPeopleDataModel.swift */; };
@@ -56,7 +61,12 @@
 		C047FEF02978142B00D1894A /* MostPopularMoviesSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MostPopularMoviesSB.storyboard; sourceTree = "<group>"; };
 		C047FEF22978144100D1894A /* MostPopularMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularMoviesViewController.swift; sourceTree = "<group>"; };
 		C06A862529784D8C005E0237 /* MostPopularMoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularMoviesCollectionViewCell.swift; sourceTree = "<group>"; };
+		C08EA1B22982BE7A00FE481F /* CastMoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastMoviesCollectionViewCell.swift; sourceTree = "<group>"; };
+		C08EA1B42982C32E00FE481F /* TVsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C0A76D8B29816A2100B88D6F /* TheMoviesAppWithMVVM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheMoviesAppWithMVVM-Bridging-Header.h"; sourceTree = "<group>"; };
+		C0A76D8C2981A7DA00B88D6F /* CastDetailsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CastDetailsStoryboard.storyboard; sourceTree = "<group>"; };
+		C0A76D8E2981A9EB00B88D6F /* CastDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDetailsViewController.swift; sourceTree = "<group>"; };
+		C0A76D902981B8C400B88D6F /* CastDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDetailsViewModel.swift; sourceTree = "<group>"; };
 		C0E9325D297B0F7D00F5E50D /* CastDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDataModel.swift; sourceTree = "<group>"; };
 		C0E9325F297B105D00F5E50D /* MovieVideoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVideoDataModel.swift; sourceTree = "<group>"; };
 		C0E93261297B107800F5E50D /* CastPeopleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastPeopleDataModel.swift; sourceTree = "<group>"; };
@@ -161,6 +171,7 @@
 			children = (
 				C047FEEC2977E22600D1894A /* MostPopularMovieViewModel.swift */,
 				C03AC045297D757B0096D262 /* MovieDetailsViewModel.swift */,
+				C0A76D902981B8C400B88D6F /* CastDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -181,6 +192,15 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		C08EA1B12982BE4300FE481F /* Cast CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				C08EA1B22982BE7A00FE481F /* CastMoviesCollectionViewCell.swift */,
+				C08EA1B42982C32E00FE481F /* TVsCollectionViewCell.swift */,
+			);
+			path = "Cast CollectionViews";
+			sourceTree = "<group>";
+		};
 		C0A76D8A2981688E00B88D6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +214,7 @@
 				C047FECF2977CE9F00D1894A /* LaunchScreen.storyboard */,
 				C047FEF02978142B00D1894A /* MostPopularMoviesSB.storyboard */,
 				C0E93267297B132300F5E50D /* MovieDetailsStoryboard.storyboard */,
+				C0A76D8C2981A7DA00B88D6F /* CastDetailsStoryboard.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -203,6 +224,7 @@
 			children = (
 				C047FEF22978144100D1894A /* MostPopularMoviesViewController.swift */,
 				C03AC047297D8B7A0096D262 /* MovieDetailsViewController.swift */,
+				C0A76D8E2981A9EB00B88D6F /* CastDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -212,6 +234,7 @@
 			children = (
 				C06A862529784D8C005E0237 /* MostPopularMoviesCollectionViewCell.swift */,
 				C03AC04B297DABCD0096D262 /* Details CollectionViews */,
+				C08EA1B12982BE4300FE481F /* Cast CollectionViews */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -287,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A76D8D2981A7DA00B88D6F /* CastDetailsStoryboard.storyboard in Resources */,
 				C047FED12977CE9F00D1894A /* LaunchScreen.storyboard in Resources */,
 				C0E93268297B132300F5E50D /* MovieDetailsStoryboard.storyboard in Resources */,
 				C047FECE2977CE9F00D1894A /* Assets.xcassets in Resources */,
@@ -305,9 +329,11 @@
 				C03AC048297D8B7A0096D262 /* MovieDetailsViewController.swift in Sources */,
 				C0E93260297B105D00F5E50D /* MovieVideoDataModel.swift in Sources */,
 				C047FEF32978144100D1894A /* MostPopularMoviesViewController.swift in Sources */,
+				C08EA1B32982BE7A00FE481F /* CastMoviesCollectionViewCell.swift in Sources */,
 				C047FEE52977D84A00D1894A /* Services.swift in Sources */,
 				C047FEC92977CE9C00D1894A /* ViewController.swift in Sources */,
 				C0E93264297B10B900F5E50D /* CastPeopleMovieCreditsDataModel.swift in Sources */,
+				C0A76D912981B8C400B88D6F /* CastDetailsViewModel.swift in Sources */,
 				C03AC046297D757B0096D262 /* MovieDetailsViewModel.swift in Sources */,
 				C047FEC52977CE9C00D1894A /* AppDelegate.swift in Sources */,
 				C047FEE02977D3F300D1894A /* MostPopularDataModel.swift in Sources */,
@@ -315,10 +341,12 @@
 				C03AC04D297DAC3F0096D262 /* VideosCollectionViewCell.swift in Sources */,
 				C0E93262297B107800F5E50D /* CastPeopleDataModel.swift in Sources */,
 				C0E9325E297B0F7D00F5E50D /* CastDataModel.swift in Sources */,
+				C0A76D8F2981A9EB00B88D6F /* CastDetailsViewController.swift in Sources */,
 				C0E93266297B10D500F5E50D /* CastPeopleTvCreditsDataModel.swift in Sources */,
 				C047FEC72977CE9C00D1894A /* SceneDelegate.swift in Sources */,
 				C03AC04F297DAEA50096D262 /* CastCollectionViewCell.swift in Sources */,
 				C047FEEB2977DCC600D1894A /* Constants.swift in Sources */,
+				C08EA1B52982C32E00FE481F /* TVsCollectionViewCell.swift in Sources */,
 				C06A862629784D8C005E0237 /* MostPopularMoviesCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,6 +497,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9Z5J5Q4MH4;
+				ENABLE_APP_SANDBOX = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TheMoviesAppWithMVVM/Info.plist;
 				INFOPLIST_KEY_NSMainStoryboardFile = "";
@@ -479,6 +509,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,6 +533,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9Z5J5Q4MH4;
+				ENABLE_APP_SANDBOX = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TheMoviesAppWithMVVM/Info.plist;
 				INFOPLIST_KEY_NSMainStoryboardFile = "";
@@ -512,6 +545,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

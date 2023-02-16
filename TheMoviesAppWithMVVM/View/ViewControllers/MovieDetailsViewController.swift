@@ -17,6 +17,10 @@ class MovieDetailsViewController: UIViewController {
     var dataList: MostPopularMovie?
     let movieDetailsViewModel: MovieDetailsViewModelProtocol = MovieDetailsViewModel()
     
+//    @IBOutlet weak var navBar: UINavigationBar!
+//    @IBOutlet weak var navItem: UINavigationItem!
+//    @IBOutlet weak var backButton: UIBarButtonItem!
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var viewForImages: UIView!
     @IBOutlet weak var bigMovieImage: UIImageView!
@@ -32,21 +36,20 @@ class MovieDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        movieDetailsViewModel.fetchVideos(id: dataList?.id ?? 0)
         movieDetailsViewModel.fetchCast(id: dataList?.id ?? 0)
+        movieDetailsViewModel.fetchVideos(id: dataList?.id ?? 0)
         setupUI()
         setupDetails()
-        
+        getNavCont()
     }
     
     private func setupUI() {
+        self.scrollView.delegate = self
+        self.navigationController?.delegate = self
         self.videosCV.delegate = self
         self.videosCV.dataSource = self
         self.castCV.delegate = self
         self.castCV.dataSource = self
-        
-//        videosCV.register(VideosCollectionViewCell.self, forCellWithReuseIdentifier: "videosCell")
-//        castCV.register(CastCollectionViewCell.self, forCellWithReuseIdentifier: "castCell")
         movieDetailsViewModel.setDelegate(output: self)
         movieDetailsViewModel.movieDetailsOutput?.saveDatas()
     }
@@ -65,9 +68,7 @@ class MovieDetailsViewController: UIViewController {
         smallMovieImage.clipsToBounds = true
         smallMovieImage.layer.cornerRadius = 10.0
         moviesRate.backgroundColor = viewForImages.backgroundColor
-        //navigationController?.navigationBar.layer.opacity = 0.1
-        //navigationController?.navigationItem.titleView?.layer.opacity = 0.1
-        
+        navigationController?.navigationBar.layer.opacity = 0.01
     }
 
 }
@@ -79,6 +80,14 @@ extension MovieDetailsViewController: UICollectionViewDelegate, UICollectionView
         case 1: return movieDetailsViewModel.castDetails.count
         default: return Int()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "CastDetailsStoryboard", bundle: nil)
+        let castDetailVC = storyboard.instantiateViewController(withIdentifier: "CastDetailVC") as! CastDetailsViewController
+        let detailsList = movieDetailsViewModel.castDetails[indexPath.row]
+        castDetailVC.detailsList = detailsList
+        self.navigationController?.pushViewController(castDetailVC, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -101,6 +110,17 @@ extension MovieDetailsViewController: UICollectionViewDelegate, UICollectionView
     }
     
 }
+
+extension MovieDetailsViewController: UINavigationControllerDelegate {
+    func getNavCont() -> UINavigationController? {
+        var backButton: UIBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        navigationController?.navigationBar.layer.opacity = 0.1
+        return navigationController
+    }
+}
+
+extension MovieDetailsViewController: UIScrollViewDelegate { }
 
 extension MovieDetailsViewController: MovieDetailsOutput {
     func saveDatas() {

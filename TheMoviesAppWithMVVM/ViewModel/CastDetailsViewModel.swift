@@ -14,7 +14,7 @@ protocol CastDetailsViewModelProtocol {
     func setDelegate(output: CastDetailsOutput)
     
     var castDetailsOutput: CastDetailsOutput? { get }
-    var personDetails: CastPeople? { get set }
+    var personDetails: CastPeople? { get }
     var movieCredits: [PeopleMovieCredits] { get set }
     var tvCredits: [PeopleTvCredits] { get set }
 }
@@ -38,7 +38,7 @@ final class CastDetailsViewModel: CastDetailsViewModelProtocol {
     func fetchPersonDetails(id: Int) {
         mostPopularMovieService.fetchPersonDatas(id: id) { [weak self] (model) in
             self?.personDetails = model
-            self?.castDetailsOutput?.saveDatas()
+            self?.castDetailsOutput?.getBiography()
         } onFail: { error in
             print(error)
         }

@@ -8,13 +8,11 @@
 import Foundation
 
 protocol MovieDetailsViewModelProtocol {
-    func fetchVideos(id: Int)
     func fetchCast(id: Int)
     func setDelegate(output: MovieDetailsOutput)
     
     var movieDetailsOutput: MovieDetailsOutput? { get }
     var dataList: MostPopularMovie? { get }
-    var videoDetails: [MovieVideos] { get set }
     var castDetails: [CastPersons] { get set }
 }
 
@@ -24,7 +22,6 @@ final class MovieDetailsViewModel: MovieDetailsViewModelProtocol {
     var mostPopularMovieService: MostPopularMovieDatasServiceProtocol = MostPopularMovieService()
     
     var dataList: MostPopularMovie?
-    var videoDetails: [MovieVideos] = []
     var castDetails: [CastPersons] = []
     
     init() {
@@ -33,15 +30,6 @@ final class MovieDetailsViewModel: MovieDetailsViewModelProtocol {
     
     func setDelegate(output: MovieDetailsOutput) {
         movieDetailsOutput = output
-    }
-    
-    func fetchVideos(id: Int) {
-        mostPopularMovieService.fetchVideoDatas(id: id) { [weak self] (model) in
-            self?.videoDetails = model
-            self?.movieDetailsOutput?.saveDatas()
-        } onFail: { error in
-            print(error)
-        }
     }
     
     func fetchCast(id: Int) {

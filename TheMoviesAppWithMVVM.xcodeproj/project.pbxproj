@@ -10,7 +10,6 @@
 		C02909B729791F71008702FE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C02909B629791F71008702FE /* Kingfisher */; };
 		C03AC046297D757B0096D262 /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03AC045297D757B0096D262 /* MovieDetailsViewModel.swift */; };
 		C03AC048297D8B7A0096D262 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03AC047297D8B7A0096D262 /* MovieDetailsViewController.swift */; };
-		C03AC04D297DAC3F0096D262 /* VideosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03AC04C297DAC3F0096D262 /* VideosCollectionViewCell.swift */; };
 		C03AC04F297DAEA50096D262 /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03AC04E297DAEA50096D262 /* CastCollectionViewCell.swift */; };
 		C047FEC52977CE9C00D1894A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047FEC42977CE9C00D1894A /* AppDelegate.swift */; };
 		C047FEC72977CE9C00D1894A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047FEC62977CE9C00D1894A /* SceneDelegate.swift */; };
@@ -29,12 +28,10 @@
 		C08EA1B32982BE7A00FE481F /* CastMoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EA1B22982BE7A00FE481F /* CastMoviesCollectionViewCell.swift */; };
 		C08EA1B52982C32E00FE481F /* TVsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EA1B42982C32E00FE481F /* TVsCollectionViewCell.swift */; };
 		C0A76D8629815DBD00B88D6F /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = C0A76D8529815DBD00B88D6F /* Cosmos */; };
-		C0A76D892981687600B88D6F /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = C0A76D882981687600B88D6F /* YouTubeiOSPlayerHelper */; };
 		C0A76D8D2981A7DA00B88D6F /* CastDetailsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A76D8C2981A7DA00B88D6F /* CastDetailsStoryboard.storyboard */; };
 		C0A76D8F2981A9EB00B88D6F /* CastDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A76D8E2981A9EB00B88D6F /* CastDetailsViewController.swift */; };
 		C0A76D912981B8C400B88D6F /* CastDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A76D902981B8C400B88D6F /* CastDetailsViewModel.swift */; };
 		C0E9325E297B0F7D00F5E50D /* CastDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9325D297B0F7D00F5E50D /* CastDataModel.swift */; };
-		C0E93260297B105D00F5E50D /* MovieVideoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9325F297B105D00F5E50D /* MovieVideoDataModel.swift */; };
 		C0E93262297B107800F5E50D /* CastPeopleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E93261297B107800F5E50D /* CastPeopleDataModel.swift */; };
 		C0E93264297B10B900F5E50D /* CastPeopleMovieCreditsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E93263297B10B900F5E50D /* CastPeopleMovieCreditsDataModel.swift */; };
 		C0E93266297B10D500F5E50D /* CastPeopleTvCreditsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E93265297B10D500F5E50D /* CastPeopleTvCreditsDataModel.swift */; };
@@ -44,7 +41,6 @@
 /* Begin PBXFileReference section */
 		C03AC045297D757B0096D262 /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
 		C03AC047297D8B7A0096D262 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
-		C03AC04C297DAC3F0096D262 /* VideosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosCollectionViewCell.swift; sourceTree = "<group>"; };
 		C03AC04E297DAEA50096D262 /* CastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCollectionViewCell.swift; sourceTree = "<group>"; };
 		C047FEC12977CE9C00D1894A /* TheMoviesAppWithMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMoviesAppWithMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C047FEC42977CE9C00D1894A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,12 +59,10 @@
 		C06A862529784D8C005E0237 /* MostPopularMoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularMoviesCollectionViewCell.swift; sourceTree = "<group>"; };
 		C08EA1B22982BE7A00FE481F /* CastMoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastMoviesCollectionViewCell.swift; sourceTree = "<group>"; };
 		C08EA1B42982C32E00FE481F /* TVsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVsCollectionViewCell.swift; sourceTree = "<group>"; };
-		C0A76D8B29816A2100B88D6F /* TheMoviesAppWithMVVM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheMoviesAppWithMVVM-Bridging-Header.h"; sourceTree = "<group>"; };
 		C0A76D8C2981A7DA00B88D6F /* CastDetailsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CastDetailsStoryboard.storyboard; sourceTree = "<group>"; };
 		C0A76D8E2981A9EB00B88D6F /* CastDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDetailsViewController.swift; sourceTree = "<group>"; };
 		C0A76D902981B8C400B88D6F /* CastDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDetailsViewModel.swift; sourceTree = "<group>"; };
 		C0E9325D297B0F7D00F5E50D /* CastDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDataModel.swift; sourceTree = "<group>"; };
-		C0E9325F297B105D00F5E50D /* MovieVideoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVideoDataModel.swift; sourceTree = "<group>"; };
 		C0E93261297B107800F5E50D /* CastPeopleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastPeopleDataModel.swift; sourceTree = "<group>"; };
 		C0E93263297B10B900F5E50D /* CastPeopleMovieCreditsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastPeopleMovieCreditsDataModel.swift; sourceTree = "<group>"; };
 		C0E93265297B10D500F5E50D /* CastPeopleTvCreditsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastPeopleTvCreditsDataModel.swift; sourceTree = "<group>"; };
@@ -83,7 +77,6 @@
 				C0A76D8629815DBD00B88D6F /* Cosmos in Frameworks */,
 				C02909B729791F71008702FE /* Kingfisher in Frameworks */,
 				C047FEE82977D86400D1894A /* Alamofire in Frameworks */,
-				C0A76D892981687600B88D6F /* YouTubeiOSPlayerHelper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +86,6 @@
 		C03AC04B297DABCD0096D262 /* Details CollectionViews */ = {
 			isa = PBXGroup;
 			children = (
-				C03AC04C297DAC3F0096D262 /* VideosCollectionViewCell.swift */,
 				C03AC04E297DAEA50096D262 /* CastCollectionViewCell.swift */,
 			);
 			path = "Details CollectionViews";
@@ -126,7 +118,6 @@
 				C047FEDB2977CEF500D1894A /* ViewModel */,
 				C047FED82977CEAF00D1894A /* Features */,
 				C047FED22977CE9F00D1894A /* Info.plist */,
-				C0A76D8B29816A2100B88D6F /* TheMoviesAppWithMVVM-Bridging-Header.h */,
 			);
 			path = TheMoviesAppWithMVVM;
 			sourceTree = "<group>";
@@ -148,7 +139,6 @@
 			children = (
 				C047FEDF2977D3F300D1894A /* MostPopularDataModel.swift */,
 				C0E9325D297B0F7D00F5E50D /* CastDataModel.swift */,
-				C0E9325F297B105D00F5E50D /* MovieVideoDataModel.swift */,
 				C0E93261297B107800F5E50D /* CastPeopleDataModel.swift */,
 				C0E93263297B10B900F5E50D /* CastPeopleMovieCreditsDataModel.swift */,
 				C0E93265297B10D500F5E50D /* CastPeopleTvCreditsDataModel.swift */,
@@ -259,7 +249,6 @@
 				C047FEE72977D86400D1894A /* Alamofire */,
 				C02909B629791F71008702FE /* Kingfisher */,
 				C0A76D8529815DBD00B88D6F /* Cosmos */,
-				C0A76D882981687600B88D6F /* YouTubeiOSPlayerHelper */,
 			);
 			productName = TheMoviesAppWithMVVM;
 			productReference = C047FEC12977CE9C00D1894A /* TheMoviesAppWithMVVM.app */;
@@ -294,7 +283,6 @@
 				C047FEE62977D86400D1894A /* XCRemoteSwiftPackageReference "Alamofire" */,
 				C02909B529791F71008702FE /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				C0A76D8429815DBD00B88D6F /* XCRemoteSwiftPackageReference "Cosmos" */,
-				C0A76D872981687600B88D6F /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
 			);
 			productRefGroup = C047FEC22977CE9C00D1894A /* Products */;
 			projectDirPath = "";
@@ -327,7 +315,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C03AC048297D8B7A0096D262 /* MovieDetailsViewController.swift in Sources */,
-				C0E93260297B105D00F5E50D /* MovieVideoDataModel.swift in Sources */,
 				C047FEF32978144100D1894A /* MostPopularMoviesViewController.swift in Sources */,
 				C08EA1B32982BE7A00FE481F /* CastMoviesCollectionViewCell.swift in Sources */,
 				C047FEE52977D84A00D1894A /* Services.swift in Sources */,
@@ -338,7 +325,6 @@
 				C047FEC52977CE9C00D1894A /* AppDelegate.swift in Sources */,
 				C047FEE02977D3F300D1894A /* MostPopularDataModel.swift in Sources */,
 				C047FEED2977E22600D1894A /* MostPopularMovieViewModel.swift in Sources */,
-				C03AC04D297DAC3F0096D262 /* VideosCollectionViewCell.swift in Sources */,
 				C0E93262297B107800F5E50D /* CastPeopleDataModel.swift in Sources */,
 				C0E9325E297B0F7D00F5E50D /* CastDataModel.swift in Sources */,
 				C0A76D8F2981A9EB00B88D6F /* CastDetailsViewController.swift in Sources */,
@@ -429,7 +415,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OBJC_BRIDGING_HEADER = "TheMoviesAppWithMVVM-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -483,7 +469,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OBJC_BRIDGING_HEADER = "TheMoviesAppWithMVVM-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -518,7 +504,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.TheMoviesAppWithMVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "TheMoviesAppWithMVVM/TheMoviesAppWithMVVM-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -554,7 +539,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.TheMoviesAppWithMVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "TheMoviesAppWithMVVM/TheMoviesAppWithMVVM-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -608,14 +592,6 @@
 				kind = branch;
 			};
 		};
-		C0A76D872981687600B88D6F /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/youtube/youtube-ios-player-helper.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -633,11 +609,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C0A76D8429815DBD00B88D6F /* XCRemoteSwiftPackageReference "Cosmos" */;
 			productName = Cosmos;
-		};
-		C0A76D882981687600B88D6F /* YouTubeiOSPlayerHelper */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C0A76D872981687600B88D6F /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
-			productName = YouTubeiOSPlayerHelper;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -24,12 +24,10 @@ class MostPopularMoviesCollectionViewCell: UICollectionViewCell {
         movieNameLabel.text = model.original_title
         overviewLabel.text = model.overview
         
-        labelsView.layer.cornerRadius = 10.0
-        labelsView.layer.borderWidth = 1.0
+        labelsView.layer.borderWidth = 0.5
         labelsView.layer.borderColor = UIColor.lightGray.cgColor
         labelsView.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
         labelsView.layer.shadowColor = UIColor.lightGray.cgColor
-        labelsView.layer.cornerRadius = 10.0
         imageMovie.layer.cornerRadius = 10.0
     }
     

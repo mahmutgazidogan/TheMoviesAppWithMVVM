@@ -10,6 +10,7 @@ import Kingfisher
 
 protocol CastDetailsOutput {
     func saveDatas()
+    func getBiography()
 }
 
 class CastDetailsViewController: UIViewController {
@@ -29,6 +30,7 @@ class CastDetailsViewController: UIViewController {
     @IBOutlet weak var moviesCV: UICollectionView!
     @IBOutlet weak var tvsTitleLabl: UILabel!
     @IBOutlet weak var tvsCV: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +39,6 @@ class CastDetailsViewController: UIViewController {
         castDetailsViewModel.fetchTvCredits(id: detailsList?.id ?? 0)
         setupUI()
         setupCastDetails()
-        getNavCont()
     }
     
     private func setupUI() {
@@ -48,7 +49,6 @@ class CastDetailsViewController: UIViewController {
         self.tvsCV.delegate = self
         self.tvsCV.dataSource = self
         castDetailsViewModel.setDelegate(output: self)
-        castDetailsViewModel.castDetailsOutput?.saveDatas()
     }
     
     private func setupCastDetails() {
@@ -60,9 +60,10 @@ class CastDetailsViewController: UIViewController {
     }
     
     private func castDetailsDrawings() {
-        bigPersonImage.layer.opacity = 0.1
+        bigPersonImage.layer.opacity = 0.5
         smallPersonImage.clipsToBounds = true
         smallPersonImage.layer.cornerRadius = 10.0
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 }
 
@@ -70,7 +71,11 @@ extension CastDetailsViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView.tag {
         case 0: return castDetailsViewModel.movieCredits.count
-        case 1: return castDetailsViewModel.tvCredits.count
+        case 1: if castDetailsViewModel.tvCredits.count == 0 {
+            return 1
+        } else {
+            return castDetailsViewModel.tvCredits.count
+        }
         default: return Int()
         }
     }
@@ -83,7 +88,13 @@ extension CastDetailsViewController: UICollectionViewDelegate, UICollectionViewD
             return cell
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tvsCell", for: indexPath) as? TVsCollectionViewCell else { return UICollectionViewCell() }
-            cell.saveModel(model: castDetailsViewModel.tvCredits[indexPath.row])
+            if castDetailsViewModel.tvCredits.count == 0 {
+                cell.tvImage.kf.setImage(with: URL(string: "https://icon-library.com/images/no-data-icon/no-data-icon-12.jpg"))
+                cell.tvNameLabel.text = ""
+            } else {
+                cell.saveModel(model: castDetailsViewModel.tvCredits[indexPath.row])
+            }
+            
             return cell
         default:
             return UICollectionViewCell()
@@ -91,25 +102,26 @@ extension CastDetailsViewController: UICollectionViewDelegate, UICollectionViewD
     }
 }
 
-extension CastDetailsViewController: UINavigationControllerDelegate {
-    func getNavCont() -> UINavigationController? {
-        var backButton: UIBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-        navigationController?.navigationBar.layer.opacity = 0.1
-        return navigationController
-    }
-}
+extension CastDetailsViewController: UINavigationControllerDelegate { }
 
-extension CastDetailsViewController: UIScrollViewDelegate {}
+extension CastDetailsViewController: UIScrollViewDelegate { }
 
 extension CastDetailsViewController: CastDetailsOutput {
-    func saveDatas() {
-        if castDetailsViewModel.personDetails?.biography == nil {
+    func getBiography() {
+        guard let biography = castDetailsViewModel.personDetails?.biography, castDetailsViewModel.personDetails?.biography != "" else {
+            activityIndicator.startAnimating()
             biographyLabel.text = "Biography data has not found!"
-        } else {
-            biographyLabel.text = castDetailsViewModel.personDetails?.biography
+            activityIndicator.stopAnimating()
+            return
         }
+        activityIndicator.startAnimating()
+        biographyLabel.text = biography
+        activityIndicator.stopAnimating()
+    }
+    
+    func saveDatas() {
         self.moviesCV.reloadData()
         self.tvsCV.reloadData()
     }
+    
 }

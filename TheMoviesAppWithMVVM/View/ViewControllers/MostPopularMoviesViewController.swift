@@ -17,7 +17,8 @@ class MostPopularMoviesViewController: UIViewController {
     
     @IBOutlet weak var mostPopularMoviesCV: UICollectionView!
     @IBOutlet weak var mostPopularsLabel: UILabel!
-    @IBOutlet weak var searchBar: UISearchBar! = UISearchBar()
+    
+    private let searcher = UISearchController(searchResultsController: nil)
     
     var makingSearch: Bool = false
     var searchedMovie: [MostPopularMovie] = [MostPopularMovie]()
@@ -25,25 +26,29 @@ class MostPopularMoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mostPopularMovieViewModel.fetchMovies()
-        setupUI()
         setNavCont()
-        getNavCont()
+        setupUI()
+        createSearchBar()
     }
 
     private func setupUI(){
+        title = "Home"
         self.mostPopularMoviesCV.delegate = self
         self.mostPopularMoviesCV.dataSource = self
-        self.searchBar.delegate = self
-        self.navigationController?.delegate = self
         mostPopularMovieViewModel.setDelegate(output: self)
         mostPopularMovieViewModel.mostPopularMoviesOutput?.saveDatas()
     }
     
+    private func createSearchBar() {
+        navigationItem.searchController = searcher
+        searcher.searchBar.delegate = self
+        searcher.searchBar.placeholder = "Search a movie..."
+    }
+    
     private func setNavCont() {
-        var leftNavBarButton = UIBarButtonItem(customView:searchBar)
-        self.navigationItem.leftBarButtonItem = leftNavBarButton
-        self.navigationController?.navigationBar.backgroundColor = .clear
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.delegate = self
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.isOpaque = false
     }
     
 }
@@ -77,11 +82,12 @@ extension MostPopularMoviesViewController: UICollectionViewDelegate, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "moviesCell", for: indexPath) as? MostPopularMoviesCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.labelsView.layer.cornerRadius = 10.0
         collectionView.layer.backgroundColor = view.backgroundColor?.cgColor
         
         if makingSearch == false {
+            
             cell.saveModel(model: mostPopularMovieViewModel.dataList[indexPath.row])
+            
         } else {
             cell.saveModel(model: searchedMovie[indexPath.row])
         }
@@ -100,14 +106,15 @@ extension MostPopularMoviesViewController: UISearchBarDelegate {
         }
         mostPopularMoviesCV.reloadData()
     }
-}
-
-extension MostPopularMoviesViewController: UINavigationControllerDelegate {
-    func getNavCont() -> UINavigationController? {
-        navigationController?.navigationBar.layer.opacity = 1.0
-        return navigationController
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        title = "Home"
+        makingSearch = false
+        mostPopularMovieViewModel.fetchMovies()
+        mostPopularMovieViewModel.mostPopularMoviesOutput?.saveDatas()
     }
 }
+
+extension MostPopularMoviesViewController: UINavigationControllerDelegate { }
 
 extension MostPopularMoviesViewController: MostPopularMoviesOutput {
     func saveDatas() {
